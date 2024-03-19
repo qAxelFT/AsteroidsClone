@@ -3,11 +3,13 @@ use bevy::prelude::*;
 pub mod asteroid;
 pub mod bullet;
 pub mod player;
+pub mod score;
 pub mod systems;
 
 use crate::asteroid::*;
 use crate::bullet::*;
 use crate::player::*;
+use crate::score::*;
 use crate::systems::spawn_camera;
 
 fn main() {
@@ -17,6 +19,7 @@ fn main() {
             PlayerPlugin,
             AsteroidPlugin,
             BulletPlugin,
+            ScorePlugin,
         ))
         .add_systems(Startup, spawn_camera)
         .run();

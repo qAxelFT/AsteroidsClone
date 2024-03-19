@@ -4,6 +4,7 @@ use bevy::window::PrimaryWindow;
 use super::components::*;
 use crate::asteroid::components::*;
 use crate::player::components::*;
+use crate::score::resources::*;
 
 pub fn shoot_bullet(
     window_query: Query<&Window, With<PrimaryWindow>>,
@@ -64,6 +65,7 @@ pub fn bullet_asteroid_collision(
     mut commands: Commands,
     asteroid_query: Query<(Entity, &Transform, &Asteroid)>,
     bullet_query: Query<(Entity, &Transform, &Bullet)>,
+    mut score: ResMut<Score>,
 ) {
     for (bullet_entity, bullet_transform, bullet) in &bullet_query {
         for (asteroid_entity, asteroid_transform, asteroid) in &asteroid_query {
@@ -74,6 +76,7 @@ pub fn bullet_asteroid_collision(
             let asteroid_radius = asteroid.size / 2.0;
 
             if distance < bullet_radius + asteroid_radius {
+                score.value += 1;
                 commands.entity(asteroid_entity).despawn();
                 commands.entity(bullet_entity).despawn();
             }

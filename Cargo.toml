@@ -11,4 +11,5 @@ opt-level = 3
 
 [dependencies]
 bevy = { version = "0.13.0", features = ["dynamic_linking"] }
+bevy-parallax = "0.8.0"
 rand = "0.8.5"

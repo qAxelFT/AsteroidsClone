@@ -210,6 +210,7 @@ name = "asteroid"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "bevy-parallax",
  "rand",
 ]
 
@@ -304,6 +305,16 @@ checksum = "611dd99f412e862610adb43e2243b16436c6d8009f6d9dbe8ce3d6d840b34029"
 dependencies = [
  "bevy_dylib",
  "bevy_internal",
+]
+
+[[package]]
+name = "bevy-parallax"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "48a8d8b7d4152965e1890c88fca2b066df3599df1574a189d62ed9cedac7d6cd"
+dependencies = [
+ "bevy",
+ "serde",
 ]
 
 [[package]]

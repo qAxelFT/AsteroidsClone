@@ -16,7 +16,7 @@ use crate::systems::spawn_camera;
 
 fn main() {
     let primary_window = Window {
-        title: "Cyberpunk".to_string(),
+        title: "Asteroids".to_string(),
         resolution: (720.0, 720.0).into(),
         resizable: false,
         ..Default::default()
